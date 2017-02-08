@@ -23,6 +23,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     //MARK: UITextFieldDelegate
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard.
         textField.resignFirstResponder()
@@ -52,8 +53,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
     }
-
-
+  
     //MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
         
@@ -69,10 +69,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         // Make sure ViewController is notified when the user picks an image.
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
-
     }
+  
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
         mealNameLabel.text = "Default Text"
-    }
+    }    
 }
 
