@@ -111,6 +111,22 @@ class MealTableViewController: UITableViewController {
     */
     
     
+    //MARK: Actions
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+        
+        // NOTE: First time in the tutorial the code is wrong, tutorial code is correct in the "the unwindToMealList(_:) action method should look like this:" section though
+        if let sourceViewController = sender.source as? MealViewController, let meal = sourceViewController.meal {
+            
+            // Add a new meal.
+            let newIndexPath = IndexPath(row: meals.count, section: 0)
+            
+            meals.append(meal)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+
+        }
+    }
+    
+        
     //MARK: Private Methods
     private func loadSampleMeals() {
         
