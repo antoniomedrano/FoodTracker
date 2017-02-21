@@ -126,10 +126,7 @@ class MealTableViewController: UITableViewController {
         }
     }
     
-
-    
-
-    
+        
     //MARK: Private Methods
     private func loadSampleMeals() {
         
