@@ -144,12 +144,18 @@ class MealTableViewController: UITableViewController {
         // NOTE: First time in the tutorial the code is wrong, tutorial code is correct in the "the unwindToMealList(_:) action method should look like this:" section though
         if let sourceViewController = sender.source as? MealViewController, let meal = sourceViewController.meal {
             
-            // Add a new meal.
-            let newIndexPath = IndexPath(row: meals.count, section: 0)
-            
-            meals.append(meal)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
-
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update an existing meal.
+                meals[selectedIndexPath.row] = meal
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }
+            else{
+                // Add a new meal.
+                let newIndexPath = IndexPath(row: meals.count, section: 0)
+                
+                meals.append(meal)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
         }
     }
     
