@@ -61,6 +61,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         navigationItem.title = textField.text
     }
     
+    
     //MARK: UIImagePickerControllerDelegate
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         // Dismiss the picker if the user canceled.
@@ -80,6 +81,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
     }
+    
     
     //MARK: Navigation
     @IBAction func cancel(_ sender: UIBarButtonItem) {
